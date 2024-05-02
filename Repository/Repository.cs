@@ -33,9 +33,9 @@ namespace MagicVilla_VillaAPI.Repository
             IQueryable<T> query = dbSet;
             if (filter != null)
             {
-                if (tracked)
+                if (!tracked)
                 {
-                    query.AsNoTracking().Where(filter);
+                    query.AsNoTracking();
                 }
                 else
                 {
